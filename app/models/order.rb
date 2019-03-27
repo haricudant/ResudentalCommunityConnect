@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
     has_many :order_items
     before_save :set_subtotal
+    validates_numericality_of :set_subtotal, :greater_than => 0, :less_than => 99
 
 
 
