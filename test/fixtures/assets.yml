@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assetname: MyString
+  assettype: MyString
+  workingcondition: MyString
+  user: one
+
+two:
+  assetname: MyString
+  assettype: MyString
+  workingcondition: MyString
+  user: two

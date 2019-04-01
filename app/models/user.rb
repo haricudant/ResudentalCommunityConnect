@@ -6,6 +6,9 @@ class User < ApplicationRecord
          has_many :votes, dependent: :destroy
          has_many :vote_values, through: :votes
          has_one :profile
+         has_many :assets, dependent: :destroy
+         has_many :complains, dependent: :destroy
+        
          
          def voted_for?(poll)
           vote_values.any? {|v| v.poll == poll }

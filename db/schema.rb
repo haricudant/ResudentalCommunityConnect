@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_22_013430) do
+ActiveRecord::Schema.define(version: 2019_03_31_192300) do
+
+  create_table "appliances", force: :cascade do |t|
+    t.string "Appliance_name"
+    t.integer "Appliance_watt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assets", force: :cascade do |t|
+    t.string "assetname"
+    t.string "assettype"
+    t.string "workingcondition"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_assets_on_user_id"
+  end
 
   create_table "assignments", force: :cascade do |t|
     t.integer "color_id"
@@ -27,6 +44,22 @@ ActiveRecord::Schema.define(version: 2019_03_22_013430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+  end
+
+  create_table "complains", force: :cascade do |t|
+    t.string "description"
+    t.datetime "appointment"
+    t.string "providername"
+    t.string "mailid"
+    t.string "attachment"
+    t.integer "user_id"
+    t.integer "asset_id"
+    t.integer "serviceprovider_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asset_id"], name: "index_complains_on_asset_id"
+    t.index ["serviceprovider_id"], name: "index_complains_on_serviceprovider_id"
+    t.index ["user_id"], name: "index_complains_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
@@ -70,6 +103,20 @@ ActiveRecord::Schema.define(version: 2019_03_22_013430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "serviceproviders", force: :cascade do |t|
+    t.string "providername"
+    t.string "providerservice"
+    t.string "mailid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "servicename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

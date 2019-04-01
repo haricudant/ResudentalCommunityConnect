@@ -1,8 +1,17 @@
 class ProductsController < ApplicationController
+    before_action :ensure_admin, :only => [:new,:create, :destroy]
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
+  
+   def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized  
+    end
+  end
+  
   def index
     @products = Product.all
   end

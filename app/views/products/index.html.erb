@@ -1,3 +1,4 @@
+<% if current_user.admin? %>
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
@@ -27,3 +28,6 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+<%else%>
+<h1>Only Admin Can access this page ..!!!</h1>
+<% end %>

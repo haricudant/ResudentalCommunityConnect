@@ -1,4 +1,5 @@
 <% content_for(:page_header) {"Participate in our polls right now!"} %>
+
 <p id="notice"><%= notice %></p>
 
 
@@ -26,19 +27,12 @@
 
     <div class="btn-group">
       <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
-      <%= link_to 'Delete', poll_path(poll),
-                  method: :delete,
-                  class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+      <%= link_to 'Delete', poll_path(poll), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
     </div>
     </p>
      
       <tr>
-        <div class="btn-group">
-        <td><%= link_to 'Show', poll, class: 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_poll_path(poll) , class: 'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         
-        </div>
       </tr>
       </div>
     <% end %>
@@ -46,5 +40,6 @@
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Poll', new_poll_path %>
+<% end %>

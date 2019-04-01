@@ -1,5 +1,6 @@
 class PollsController < ApplicationController
-  
+  before_action :authenticate_user!
+  before_action :ensure_admin, :only => [:new,:create, :destroy]
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
 
   # GET /polls
@@ -21,7 +22,7 @@ class PollsController < ApplicationController
   # GET /polls/1.json
   def show
     @poll = Poll.find(params[:id])
-   @poll = Poll.includes(:vote_values).find_by_id(params[:id])
+    @poll = Poll.includes(:vote_values).find_by_id(params[:id])
   end
 
 
