@@ -14,7 +14,14 @@ class CalculateelectricbillsController < ApplicationController
         @year = CurrentPredictor::Calculation.yearlyconsumption_onrooms(1400,@number,cost)
     end
     def basedonammenities
-     @appliance = Appliance.all
+    appliance = []
+       cost = 0.1968   
+      @service = Appliance.all
+      @service.each do |p|
+          appliance << p.Appliance_name
+      end
+       @appliance = appliance
+     
     end
    end
 

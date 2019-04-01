@@ -62,6 +62,8 @@ end
   # PATCH/PUT /assets/1
   # PATCH/PUT /assets/1.json
   def update
+    
+    puts "skjnsdknfskjfnkjfnsfndskfndskjfndskfndskfnds #{@value}"
     respond_to do |format|
       if @asset.update(asset_params)
         format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }

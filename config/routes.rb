@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :profiles
   #devise_for :users
   get 'home/index'
-  get '/signedinuserprofile' => 'profiles#signedinuserprofile'
+  #get '/signedinuserprofile' => 'profiles#signedinuserprofile'
   resources :votes, only: [:create]
  get 'ajax/:action', to: 'ajax#:action', :defaults => { :format => 'json' }
     resources :polls
