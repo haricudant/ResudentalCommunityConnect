@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rents
+  resources :cals
   resources :assets
   resources :serviceproviders
   resources :services

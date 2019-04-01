@@ -1,0 +1,85 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grossrent:</strong>
+  <%= @rent.grossrent %>
+</p>
+
+<p>
+  <strong>Mortage interest:</strong>
+  <%= @rent.mortage_interest %>
+</p>
+
+<p>
+  <strong>Mortage interest allowed(85% for 2018):</strong>
+  <%= @duck[1] %>
+</p>
+
+<p>
+  <strong>Repairs:</strong>
+  <%= @rent.repairs %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @rent.insurance %>
+</p>
+
+<p>
+  <strong>Management charges:</strong>
+  <%= @rent.management_charges %>
+</p>
+
+<p>
+  <strong>Agent fees:</strong>
+  <%= @rent.agent_fee %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @rent.other %>
+</p>
+
+<p>
+  <strong>Total expenses:</strong>
+  <%= @duck[0] %>
+</p>
+
+<p>
+  <strong>Rental profit/loss:</strong>
+  <%= @duck[2] %>
+</p>
+
+<p>
+  <strong>Wear & tear:</strong>
+  <%= @rent.wear_and_tear %>
+</p>
+
+<p>
+  <strong>Net profit or loss:</strong>
+  <%= @duck[3] %>
+</p>
+
+<p>
+  <strong>Income tax:</strong>
+  <%= @duck[4] %>
+</p>
+
+<p>
+  <strong>PRSI %:</strong>
+  <%= @duck[5] %>
+</p>
+
+<p>
+  <strong>USC %:</strong>
+  <%= @duck[6] %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @duck[7] %>
+</p>
+
+
+<%= link_to 'Edit', edit_rent_path(@rent) %> |
+<%= link_to 'Back', rents_path %>

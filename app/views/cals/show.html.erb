@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron container">
+
+<p>
+  Welcome<strong>  <%= @cal.name %></string>
+</p>
+
+<p>
+  Total Predicted cost including Rent/EMI is<strong> <%= @cal.rent %> </strong>
+ 
+</p>
+
+</div>
+
+<%= link_to 'Edit', edit_cal_path(@cal) %> |
+<%= link_to 'Back', cals_path %>

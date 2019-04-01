@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_31_192300) do
+ActiveRecord::Schema.define(version: 2019_04_01_220015) do
 
   create_table "appliances", force: :cascade do |t|
     t.string "Appliance_name"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 2019_03_31_192300) do
     t.datetime "updated_at", null: false
     t.index ["color_id"], name: "index_assignments_on_color_id"
     t.index ["product_id"], name: "index_assignments_on_product_id"
+  end
+
+  create_table "cals", force: :cascade do |t|
+    t.string "name"
+    t.decimal "rent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "colors", force: :cascade do |t|
@@ -103,6 +110,27 @@ ActiveRecord::Schema.define(version: 2019_03_31_192300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.decimal "grossrent"
+    t.decimal "mortage_interest"
+    t.string "mortage_interest_allowed"
+    t.decimal "repairs"
+    t.decimal "insurance"
+    t.decimal "management_charges"
+    t.decimal "agent_fee"
+    t.decimal "other"
+    t.decimal "total_expenses"
+    t.decimal "rental_profit_or_loss"
+    t.decimal "wear_and_tear"
+    t.decimal "net_profit_or_loss"
+    t.decimal "income_tac"
+    t.decimal "prsi"
+    t.decimal "usc"
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "serviceproviders", force: :cascade do |t|

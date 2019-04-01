@@ -1,0 +1,54 @@
+<%= form_with(model: cal, local: true) do |form| %>
+  <% if cal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cal.errors.count, "error") %> prohibited this cal from being saved:</h2>
+
+      <ul>
+      <% cal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class = "jumbotron">
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rent %>
+    <%= form.text_field :rent %>
+  </div>
+
+ 
+  
+  <div class="field">
+     Sports Amenities:
+    <%= check_box_tag 'cal[sports]', 'sports' %>
+    </div>
+    
+    <div class="field">
+    Laundry Amenities:
+    <%= check_box_tag 'cal[laundry]', 'laundry' %>
+    </div>
+    
+    <div class="field">
+    Miscellaneous Amenities:
+    <%= check_box_tag 'cal[misc]', 'misc' %>
+    </div>
+  
+   <div class="field">
+    Parking Amenities:
+    <%= check_box_tag 'cal[parking]', 'parking' %>
+  </div>
+  
+   <div class="field">
+    Pets Amenities:
+    <%= check_box_tag 'cal[pet]', 'pet' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div></div>
+<% end %>
