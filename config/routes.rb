@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   post '/calculateelectricbills' =>'calculateelectricbills#show'
   get '/calculateelectricbills/usage' => 'calculateelectricbills#basedonammenities'
   post '/calculateelectricbills/showbasedonammenities' => 'calculateelectricbills#showbasedonammenities'
+  get '/calculateelectricbills/basedonmeter' => 'calculateelectricbills#basedonmeter'
+  post '/calculateelectricbills/showbasedonmeter' => 'calculateelectricbills#showbasedonmeter'
+  
   resources :shops, only:[:index, :show]
   resources :order_items
   resource :cards, only:[:show]

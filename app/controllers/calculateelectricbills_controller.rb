@@ -53,6 +53,22 @@ class CalculateelectricbillsController < ApplicationController
       puts "THE KEY IS #{a} and the value is #{b}"
      end
     @value = CurrentPredictor::Calculation.consumption(@watt,@final,cost)
+end
+  
+  def basedonmeter
+  end
+  def showbasedonmeter
+   @a = params[:electricprovider]
+   puts "dskbdkbdfsd #{@a}" 
+   if @a == 'Electric Current' then
+      puts "fucker"
+    elsif @a == 'Ebay' then
+      puts "sucker"  
+     elsif @a == 'Amazon' then
+      puts "amazon bady"
+     else
+       puts "your selection is not valid"
+   end
   end
 end
 
