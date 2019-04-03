@@ -1,21 +1,14 @@
+<h1>WELCOME TO EB BILL PREDICTOR</h1>
 <%= form_tag "/calculateelectricbills/showbasedonammenities" do |form| %>
-<h1>Please fill the appliances and its hours of consumption </h1>
-<% value = @appliance.length %>
 
 
-   <div class="field">
-   <% a = @appliance.length %>
-   
-   <% b = 0 %>
- <input id="person_name" name="person[name]" type="text" value="Henry" name="person[name]" type="text" value="Thevdiya"/>
-  <select name= "<%= @appliance[0] %>"  id ="hahaha">
-      <option value= </option>   
-  </select> 
-<br>
-    <br>
-</div>  
-
- <div class="actions">
-    <%= submit_tag  %>
-  </div>
+<%= @appliance.each do |a| %>
+<div class='form-group'>
+    <ul>
+        <li> <strong><%= a %></strong></li>
+ <%= text_field_tag a , 'Hours of Consumption', :onclick => 'if($(this).val()=="Hours of Consumption"){$(this).val("");};' %>  
+ </ul>
+ </div>
+ <% end %>
+<%= submit_tag "Check" %>
 <% end %>

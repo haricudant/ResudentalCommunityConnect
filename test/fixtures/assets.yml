@@ -4,10 +4,10 @@ one:
   assetname: MyString
   assettype: MyString
   workingcondition: MyString
-  user: one
+  user: 1
 
 two:
   assetname: MyString
   assettype: MyString
   workingcondition: MyString
-  user: two
+  user: 2
