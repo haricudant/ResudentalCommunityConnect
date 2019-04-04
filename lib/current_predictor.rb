@@ -59,6 +59,27 @@ module CurrentPredictor
                puts "Complete consumption per month for you is #{month} KWH and its cost is #{value} "
                return sum,month,value
   end
+            def self.basedonmeter(cost, standardcharge,pslv,previousreading,currentreading)
+                cost = cost
+                 puts cost
+                standardcharge = standardcharge
+                puts standardcharge
+                standardcharge = (standardcharge/12).to_i
+                puts standardcharge
+                pslv = pslv
+                puts pslv
+                pslv = (pslv/12).to_i
+                puts pslv
+                previousreading = previousreading.to_i
+                currentreading = currentreading.to_i
+                puts previousreading
+                puts currentreading
+                meterreading = (currentreading-previousreading)
+                finalcost = ((meterreading*cost)+standardcharge+pslv)
+                puts finalcost
+                return meterreading,finalcost
+                
+            end
     end
 end
 

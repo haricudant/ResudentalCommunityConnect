@@ -1,8 +1,8 @@
 <h1>WELCOME TO EB BILL PREDICTOR</h1>
 <%= form_tag "/calculateelectricbills/showbasedonmeter" do |form| %>
 <h2>Choose your service provider</h2>
-<%= select_tag "electricprovider", "<option>Electric Current</option><option>EBay</option><option>Amazon</option><option>hacha</option>".html_safe %>
-<p></p>
+
+<%= select_tag :electricprovider, options_for_select(@provider), :prompt => "Please select" %>
 <h2>Enter your previous bill readings</h2>
 
 <%= number_field_tag 'previousbill'%>

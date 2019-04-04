@@ -1,0 +1,2 @@
+class Currentprovider < ApplicationRecord
+end

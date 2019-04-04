@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Currentproviders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Providername</th>
+      <th>Cost</th>
+      <th>Standingcharge</th>
+      <th>Pslvcharge</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @currentproviders.each do |currentprovider| %>
+      <tr>
+        <td><%= currentprovider.providername %></td>
+        <td><%= currentprovider.cost %></td>
+        <td><%= currentprovider.standingcharge %></td>
+        <td><%= currentprovider.pslvcharge %></td>
+        <td><%= link_to 'Show', currentprovider %></td>
+        <td><%= link_to 'Edit', edit_currentprovider_path(currentprovider) %></td>
+        <td><%= link_to 'Destroy', currentprovider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Currentprovider', new_currentprovider_path %>

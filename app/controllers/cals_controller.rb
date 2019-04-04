@@ -95,6 +95,6 @@ class CalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cal_params
-      params.require(:cal).permit(:name, :rent, :description)
+      params.require(:cal).permit(:name, :rent)
     end
 end

@@ -56,21 +56,35 @@ class CalculateelectricbillsController < ApplicationController
 end
   
   def basedonmeter
+   @provider =[]
+     @currentprovider = Currentprovider.all
+     @currentprovider.each do |a|
+         a = a.providername
+         @provider << a
+        end
+         puts @provider
   end
   def showbasedonmeter
-   @a = params[:electricprovider]
+   @currentprovider = Currentprovider.all
+     @currentprovider.each do |a|
+      @a = params[:electricprovider]
+      puts a.providername
    puts "dskbdkbdfsd #{@a}" 
-   if @a == 'Electric Current' then
+   if @a == a.providername 
       puts "fucker"
-    elsif @a == 'Ebay' then
-      puts "sucker"  
-     elsif @a == 'Amazon' then
-      puts "amazon bady"
-     else
-       puts "your selection is not valid"
+      @cost = a.cost
+      @standardcharge = a.standingcharge
+      @pslv = a.pslvcharge
    end
   end
+  previousreading = params[:previousbill]
+  currentreading = params[:currentbill]
+  
+ @value = CurrentPredictor::Calculation.basedonmeter(@cost, @standardcharge,@pslv,previousreading,currentreading)
+ puts "hbjhbjhjhvv #{@value[0]}andddd #{@value[1]}"
+
+  puts "THE COST IS #{@cost} and its standard charge is #{@standardcharge} and pslv charge is #{@pslv}"
+  end
+
 end
-
-
 

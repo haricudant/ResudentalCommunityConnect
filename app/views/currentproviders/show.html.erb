@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Providername:</strong>
+  <%= @currentprovider.providername %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @currentprovider.cost %>
+</p>
+
+<p>
+  <strong>Standingcharge:</strong>
+  <%= @currentprovider.standingcharge %>
+</p>
+
+<p>
+  <strong>Pslvcharge:</strong>
+  <%= @currentprovider.pslvcharge %>
+</p>
+
+<%= link_to 'Edit', edit_currentprovider_path(@currentprovider) %> |
+<%= link_to 'Back', currentproviders_path %>
