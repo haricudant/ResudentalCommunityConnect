@@ -2,7 +2,7 @@ class AssetObserver < ActiveRecord::Observer
  observe :asset
  
   def after_update(asset)
-   
+   puts ""
    # @user=User.find(trip.user_id)
     
    #@value = Asset.find(params[:id])

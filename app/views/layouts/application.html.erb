@@ -10,7 +10,6 @@
   </head>
 
   <body>
-    
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -33,10 +32,10 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-    <div class="navbar1 navbar-inverse1">
+    <div class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'Poller', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav">
       <li><%= link_to 'Add poll', new_poll_path %></li>
@@ -45,6 +44,27 @@
       <li><%= link_to 'Calculate Electricity Bill', calculateelectricbills_index_path %></li>
       <li><%= link_to 'shop', shops_path %>  </li>
       
+       <% if user_signed_in? %> 
+        <% puts "user signed in" %>
+        <% else %>
+           <% puts "fuckoff" %>
+      <li><%= link_to 'Sign in', new_user_registration_path, class: "footer1"%> </li>
+      <li><%= link_to 'Register', new_user_session_path ,class: "footer1"%> </li>
+     <% end %>
+     <% if user_signed_in? %> 
+      <% if current_user.admin? %>
+      <% puts "usernis admin" %>
+      <li><%= link_to 'Household_assets', assets_path %>  </li>
+      <% end %>
+      <div  class = "footer2">
+      <% if user_signed_in? %>
+Signed in as... <%= current_user.email %>
+<% puts "linktosignout" %>
+(<%= link_to 'Sign out', destroy_user_session_path,
+:method => :delete %>)
+<% end %> 
+</div>
+      <% end %>
     </ul>
     
   </div>
@@ -65,24 +85,18 @@
     <h1><%= yield :page_header %></h1>
   </div>
 
-  <%= yield %>
+  <%= yield  %>
   <br>
   <br>
   <br>
-  <div class = "jumbotron container textcenter">
+  <div class = "jumbotron1 container textcenter">
  <ul class="nav navbar-nav navbar-right"> 
-  <% if user_signed_in? %>
-<div>Signed in as... <%= current_user.email %>
-(<%= link_to 'Sign out', destroy_user_session_path,
-:method => :delete%>)
-
-<% else %>
-<%= link_to 'Register', new_user_registration_path %> or
-<%= link_to 'Sign in', new_user_session_path %>
+  
+<strong><p class = "samp"> Copyright@2019 | A Manoj & Hari Collaboration </p> </strong>
     <li><%#= image_tag current_user.image_url, alt: current_user.name %></li>
     <li><%#= link_to 'Logout', sign_out_path %></li>
     <li><%#= link_to 'Facebook Sign in', '/auth/facebook' %></li>
-  <% end %>
+  
   </div>
 </ul>
 </div>

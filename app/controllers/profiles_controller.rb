@@ -80,7 +80,13 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
+      if current_user.id == Profile.find(params[:id]).user_id
       @profile = Profile.find(params[:id])
+    else 
+      
+        @profile = Profile.find_by_user_id(current_user.id)
+        #redirect_to "/profiles/#{@profile.id}"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

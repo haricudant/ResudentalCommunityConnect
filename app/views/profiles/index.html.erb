@@ -18,6 +18,7 @@
 
   <tbody>
     <% @profiles.each do |profile| %>
+    <% if current_user.id == profile.user_id %>
       <tr>
         <td><%= profile.firstname %></td>
         <td><%= profile.lastname %></td>
@@ -25,15 +26,16 @@
         <td><%= profile.spouse_name %></td>
         <td><%= profile.Number_of_Cars %></td>
         <td><%= profile.Intrested_in_events %></td>
-        <td><%= profile.user %></td>
+        <td><%= profile.user_id %></td>
         <td><%= link_to 'Show', profile %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Profile', new_profile_path %>
+<!-- # link_to 'New Profile', new_profile_path %> -->

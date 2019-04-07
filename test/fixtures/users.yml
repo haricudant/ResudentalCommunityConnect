@@ -5,9 +5,10 @@
 # below each fixture, per the syntax in the comments below
 #
 one: {
-    email: 'manoj@gmail.com'
+    email: 'manoj@gmail.com',
+    admin: 1
 }
 # column: value
 #
-two: {}
+#two: {}
 # column: value

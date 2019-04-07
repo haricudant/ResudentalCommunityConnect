@@ -1,24 +1,19 @@
 <p id="notice"><%= notice %></p>
+<table class="table table-bordered">
 
-<p>
-  <strong>Assetname:</strong>
-  <%= @asset.assetname %>
-</p>
+ <tr> <strong>Assetname:</strong> </tr>
+  <td> <%= @asset.assetname %> </td>
 
-<p>
-  <strong>Assettype:</strong>
-  <%= @asset.assettype %>
-</p>
+ <tr> <strong>Assettype:</strong> </tr>
+  <td>   <%= @asset.assettype %> </td>
+
 
 <p>
   <strong>Workingcondition:</strong>
   <%= @asset.workingcondition %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @asset.user_id %>
-</p>
 
 <%= link_to 'Edit', edit_asset_path(@asset) %> |
 <%= link_to 'Back', assets_path %>
+</table>

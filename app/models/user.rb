@@ -8,19 +8,31 @@ class User < ApplicationRecord
          has_one :profile
          has_many :assets, dependent: :destroy
          has_many :complains, dependent: :destroy
-        
+       PASSWORD_FORMAT = /\A
+  (?=.{8,})          # Must contain 8 or more characters
+  (?=.*\d)           # Must contain a digit
+  (?=.*[a-z])        # Must contain a lower case character
+  (?=.*[A-Z])        # Must contain an upper case character
+  (?=.*[[:^alnum:]]) # Must contain a symbol
+/x
+
+validates :password, 
+  presence: true, 
+  length: { in: Devise.password_length}, 
+  format: { with: PASSWORD_FORMAT }, 
+  confirmation: true, 
+  on: :create 
+
+validates :password, 
+  allow_nil: true, 
+  length: { in: Devise.password_length }, 
+  format: { with: PASSWORD_FORMAT }, 
+  confirmation: true, 
+  on: :update 
          
          def voted_for?(poll)
           vote_values.any? {|v| v.poll == poll }
          end
   #class << self
-    def from_omniauth(auth)
-      uid = auth.uid
-      info = auth.info.symbolize_keys!
-      user = User.find_or_initialize_by(uid: uid)
-      user.name = info.name
-      user.image_url = info.image
-      user.save!
-      user
-    end
+    
 end

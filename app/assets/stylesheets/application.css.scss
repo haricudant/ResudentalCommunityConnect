@@ -24,3 +24,12 @@
 .progress {
   background-image: linear-gradient(to bottom, #bbb 0%, #ccc 100%)
 }
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #fff !important;
+}
