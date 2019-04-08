@@ -1,3 +1,4 @@
+<div class = "jumbotron container textcenter">
 <%= form_with(model: rent, local: true) do |form| %>
   <% if rent.errors.any? %>
     <div id="error_explanation">
@@ -59,6 +60,7 @@
 
  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Predict"%>
+  </div>
   </div>
 <% end %>

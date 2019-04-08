@@ -8,6 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application' , 'data-turbolinks-track' => true %>
   </head>
+  <style>
+    
+.jj{
+  color: #ffffff;
+  }    
+  </style>
 
   <body>
 <script>
@@ -35,28 +41,47 @@
     <div class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      <%#=link_to(image_tag("the_best_image_path.jpg", class: "img_class_goes_here"), _path, class: "navbar-brand"%>
+      
+      <b><%= link_to ' Home', root_path, class: 'navbar-brand' %></b>
+      
     </div>
     <ul class="nav navbar-nav">
-      <li><%= link_to 'Add poll', new_poll_path %></li>
-      <li><%= link_to 'shop', shops_path %></li>
-      <li><%= link_to 'Show_available_polls', polls_path %></li>
-      <li><%= link_to 'Calculate Electricity Bill', calculateelectricbills_index_path %></li>
-      <li><%= link_to 'shop', shops_path %>  </li>
+      <li><%= link_to 'Poll', new_poll_path %></li>
+      <li><%= link_to 'e-Shop', shops_path %></li>
+      <li><%= link_to 'Available Polls', polls_path %></li>
+     <li> <%= link_to 'Add Need Of service link here', calculateelectricbills_index_path %> </li>
+      <li><%= link_to 'Add Products', products_path %>  </li>
+      <div class="dropdown">
+  <button class="dropbtn">Bugdet Calulators</button>
+  <div class="dropdown-content">
+    <a href="cals#index">Amenities</a>
+    <a href="rents#index">Rental Profit/Loss</a>
+    <%= link_to 'Calculate Electricity Bill', calculateelectricbills_index_path %>
+    </div></div>
       
+      <ul class = "nav navbar-nav">
        <% if user_signed_in? %> 
         <% puts "user signed in" %>
         <% else %>
-           <% puts "fuckoff" %>
+           <% puts "" %>
       <li><%= link_to 'Sign in', new_user_registration_path, class: "footer1"%> </li>
       <li><%= link_to 'Register', new_user_session_path ,class: "footer1"%> </li>
+      
+    
+  </div>
+</div></div>
      <% end %>
+     <div class ="nav navbar-nav">
      <% if user_signed_in? %> 
       <% if current_user.admin? %>
       <% puts "usernis admin" %>
-      <li><%= link_to 'Household_assets', assets_path %>  </li>
+      
+      <li><%= link_to 'Household Assets', assets_path %>  </li>
+      
       <% end %>
-      <div  class = "footer2">
+      </div>
+      <div  class = "nav navbar-nav">
       <% if user_signed_in? %>
 Signed in as... <%= current_user.email %>
 <% puts "linktosignout" %>

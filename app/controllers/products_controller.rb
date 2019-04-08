@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
     before_action :ensure_admin, :only => [:new,:create, :destroy]
+before_action :authenticate_user!
+  before_action :ensure_admin, :only => [:new,:create, :destroy]
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
