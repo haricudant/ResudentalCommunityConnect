@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     include ApplicationHelper
-    protect_from_forgery with: :null_session
+    protect_from_forgery with: :exception
             def after_sign_in_path_for(resource)
                 "/signedinuserprofile"
             end
