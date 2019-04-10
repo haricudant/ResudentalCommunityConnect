@@ -4,11 +4,8 @@ class ComplainTest < ActiveSupport::TestCase
    test "the truth" do
      assert true
    end
-   test "must not save a appliance when name and watt
-are not provided" do
-   appliance = Appliance.new(Appliance_name: "Manoj")
-   assert_equal(false, appliance.save, "saved the customer even
-though at least one of the forename,
-surname and/or email were not provided!")
+   test "must not save when any of the field is not provided" do
+   complain = Complain.new(description :"dkfndskfndskfjdns")
+   assert_equal(false, complain.save, "saved to complains table even one of the column is blank")
 end
 end

@@ -17,10 +17,13 @@
 .navbar-brand {
     float: left;
     height: 50px;
-    padding: 15px 15px;
-    font-size: 15px !important;
+    padding: 35px 25px;
+    font-size: 20px !important;
     line-height: 20px;
     color: #ffffff !important;
+}
+.pp{
+    
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -43,8 +46,8 @@ a.footer1 {
     font-size: 16px;
 }
 img.back1 {
-    width: 1451px;
-    height: 983px;
+    width: 1001px;
+    height: 83px;
     margin: -142px 0px 0px -155px;
 }
 .centertext {
@@ -59,7 +62,7 @@ p.samp {
     font-size: 15px;
 }
 img.hellno {
-    width: 600px;
+    width: 1000px;
     height: 485px;
     margin-top: -150px;
 }
@@ -69,8 +72,8 @@ a.footer2 {
     margin: 0px 0px 0px 0px;
 }
 .dropbtn {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #e1e2d7;
+  color:white ;
   padding: 16px;
   font-size: 16px;
   border: none;

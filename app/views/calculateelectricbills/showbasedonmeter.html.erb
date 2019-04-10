@@ -1,12 +1,11 @@
 <h1>Your current month billing is </h1>
-<table>
-    <th> SPLITUP OF METER READINGS </th>
-    <tr> 
-    <td>CURRENT MONTH USAGE </td>
-    <td><%= @value[0] %></td>
-    </tr>
+<table class="table table-striped">
+    <th>  
+    <tr> CURRENT MONTH USAGE  </tr>
+    <tr> COST</tr>
+    </th>
     <tr>
-        <td>COST </td>
-         <td><%= @value[1] %></td>
+    <td><%= @value[0] %></td>
+     <td><%= @value[1] %></td>
     </tr>
 </table>

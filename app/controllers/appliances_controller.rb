@@ -1,6 +1,12 @@
 class AppliancesController < ApplicationController
+   before_action :authenticate_user!
+  before_action :ensure_admin, :only => [:new,:create, :destroy]
   before_action :set_appliance, only: [:show, :edit, :update, :destroy]
-
+def ensure_admin
+    unless current_user && current_user.admin?
+      render :text => "Access Error Message", :status => :unauthorized  
+    end
+  end
   # GET /appliances
   # GET /appliances.json
   def index

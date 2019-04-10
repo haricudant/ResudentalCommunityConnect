@@ -17,6 +17,7 @@ module Pollingapp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.active_record.observers = :asset_observer
+    config.active_record.observers = :order_item_observer
   end
 end
 end

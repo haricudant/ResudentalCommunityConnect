@@ -9,87 +9,71 @@
     <%= javascript_include_tag 'application' , 'data-turbolinks-track' => true %>
   </head>
   <style>
+  body{
+    background-image:url(/assetz/apartment.jpg)
+  
+  }
     
 .jj{
   color: #ffffff;
-  }    
+  }   
+  
+
   </style>
 
-  <body>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{253168687685948}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
+  <body style="margin:0 !important">
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-    <div class="navbar navbar-inverse">
-  <div class="container">
+    <div class="">
     <div class="navbar-header">
-      <%#=link_to(image_tag("the_best_image_path.jpg", class: "img_class_goes_here"), _path, class: "navbar-brand"%>
+      <%#=link_to(imag"the_best_image_path.jpg", class: "img_class_goes_here"), _path, class: "navbar-brand"%>
       
       <b><%= link_to ' Home', root_path, class: 'navbar-brand' %></b>
-      
-    </div>
-    <ul class="nav navbar-nav">
-      <li><%= link_to 'Poll', new_poll_path %></li>
-      <li><%= link_to 'e-Shop', shops_path %></li>
-      <li><%= link_to 'Available Polls', polls_path %></li>
-     <li> <%= link_to 'Add Need Of service link here', calculateelectricbills_index_path %> </li>
-      <li><%= link_to 'Add Products', products_path %>  </li>
-      <div class="dropdown">
-  <button class="dropbtn">Bugdet Calulators</button>
-  <div class="dropdown-content">
-    <a href="cals#index">Amenities</a>
-    <a href="rents#index">Rental Profit/Loss</a>
-    <%= link_to 'Calculate Electricity Bill', calculateelectricbills_index_path %>
-    </div></div>
-      
-      <ul class = "nav navbar-nav">
        <% if user_signed_in? %> 
-        <% puts "user signed in" %>
+          <% if current_user.admin? %>
+            <ul class="nav navbar-nav pp">
+            <li><%= link_to 'Poll', new_poll_path, class: "footer1" %></li>
+            <li><%= link_to 'Add Products', products_path ,  class: "footer1"%>  </li>
+            <li><%= link_to 'Electric Current Providers', currentproviders_path, class: "footer1" %></li>
+            <li><%= link_to 'Add Service',services_path, class: "footer1" %></li>
+            <li><%= link_to 'Service Providers',serviceproviders_path, class: "footer1" %></li>
+
+            </ul>
+          <% else %>
+         <ul class="nav navbar-nav pp">
+      <li><%= link_to 'e-Shop', shops_path,  class: "footer1" %></li>
+      <li><%= link_to 'Available Polls', polls_path,  class: "footer1" %></li>
+     <li> <%= link_to 'Add Need Of service link here', calculateelectricbills_index_path, class: "footer1" %> </li>
+       <li><%= link_to 'Household Assets', assets_path , class: "footer1"%>  </li>
+      <div class="dropdown" >
+      <button class="dropbtn">Bugdet Calulators</button>
+      <div class="dropdown-content">
+        <%= link_to 'Amenities', new_cal_path %>
+        <%= link_to 'Rental Profit/Loss', new_rent_path %>
+      <%= link_to 'Calculate Electricity Bill', calculateelectricbills_index_path %>
+      </div></div>
+      <% end %>
+      <% end %>
+      <ul class = "nav navbar-nav pp">
+       <% if user_signed_in? %> 
         <% else %>
-           <% puts "" %>
-      <li><%= link_to 'Sign in', new_user_registration_path, class: "footer1"%> </li>
-      <li><%= link_to 'Register', new_user_session_path ,class: "footer1"%> </li>
+           <% puts "" %>  
+      <li><%= link_to'Login ', new_user_session_path,  class: "footer1" %></li>
+      <li><%= link_to 'Signup', new_user_registration_path ,class: "footer1" %> </li>
       
     
   </div>
 </div></div>
      <% end %>
-     <div class ="nav navbar-nav">
-     <% if user_signed_in? %> 
-      <% if current_user.admin? %>
-      <% puts "usernis admin" %>
-      
-      <li><%= link_to 'Household Assets', assets_path %>  </li>
-      
-      <% end %>
-      </div>
+    </div>
+  
       <div  class = "nav navbar-nav">
       <% if user_signed_in? %>
-Signed in as... <%= current_user.email %>
+<li> <b>Signed in as... <%= current_user.email %></b></li>
 <% puts "linktosignout" %>
-(<%= link_to 'Sign out', destroy_user_session_path,
-:method => :delete %>)
+(<%= link_to 'Sign out', destroy_user_session_path,class: "footer1",
+:method => :delete %> )
 <% end %> 
 </div>
-      <% end %>
     </ul>
     
   </div>
@@ -114,16 +98,7 @@ Signed in as... <%= current_user.email %>
   <br>
   <br>
   <br>
-  <div class = "jumbotron1 container textcenter">
- <ul class="nav navbar-nav navbar-right"> 
   
-<strong><p class = "samp"> Copyright@2019 | A Manoj & Hari Collaboration </p> </strong>
-    <li><%#= image_tag current_user.image_url, alt: current_user.name %></li>
-    <li><%#= link_to 'Logout', sign_out_path %></li>
-    <li><%#= link_to 'Facebook Sign in', '/auth/facebook' %></li>
-  
-  </div>
-</ul>
 </div>
   </body>
 </html>

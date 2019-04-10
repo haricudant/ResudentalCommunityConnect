@@ -2,12 +2,12 @@
 
 one:
   providername: MyString
-  cost: 9.99
+  cost: 9.9999
   standingcharge: 9.99
   pslvcharge: 9.99
 
 two:
   providername: MyString
-  cost: 9.99
+  cost: 9.9999
   standingcharge: 9.99
   pslvcharge: 9.99

@@ -7,7 +7,7 @@ one:
   spouse_name: MyString
   Number_of_Cars: 1
   Intrested_in_events: false
-  user: one
+  user: 1
 
 two:
   firstname: MyString
@@ -16,4 +16,4 @@ two:
   spouse_name: MyString
   Number_of_Cars: 1
   Intrested_in_events: false
-  user: two
+  user: 2

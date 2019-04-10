@@ -7,8 +7,6 @@ class CalTest < ActiveSupport::TestCase
    test "must not save a cals when name and rent
 are not provided" do
    cals = Cal.new(name: "Hari")
-   assert_equal(false, cals.save, "saved the customer even
-though at least one of the forename,
-surname and/or email were not provided!")
+   assert_equal(false, cals.save, "saved the when name or rent is empty")
 end
 end

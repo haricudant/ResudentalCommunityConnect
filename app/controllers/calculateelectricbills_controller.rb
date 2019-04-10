@@ -1,5 +1,6 @@
 # module Calculateelectricbill
  require 'current_predictor'
+ #require 'energias_controller'
 class CalculateelectricbillsController < ApplicationController 
    # class Base
     def basedonroom
@@ -65,25 +66,33 @@ end
          puts @provider
   end
   def showbasedonmeter
+    previousreading = params[:previousbill]
+  currentreading = params[:currentbill]
    @currentprovider = Currentprovider.all
      @currentprovider.each do |a|
-      @a = params[:electricprovider]
-      puts a.providername
-   puts "dskbdkbdfsd #{@a}" 
-   if @a == a.providername 
-      puts "fucker"
-      @cost = a.cost
-      @standardcharge = a.standingcharge
-      @pslv = a.pslvcharge
+     @a = params[:electricprovider]
+    if @a == "Energia" && @a == a.providername
+      puts @a
+      @value = EnergiasController.new.getproviderdetails(a)
+      @value = CurrentPredictor::Calculation.basedonmeter(@value[0],@value[1],@value[2],previousreading,currentreading)
+    elsif @a == "ElectricIreland" && @a == a.providername
+      puts @a
+      @value = ElectriccurrentsController.new.getproviderdetails(a)
+      @value = CurrentPredictor::Calculation.basedonmeter(@value[0],@value[1],@value[2],previousreading,currentreading)
+    elsif @a == "BEfreedom" && @a == a.providername
+      puts @a
+      @value = ElectriccurrentsController.new.getproviderdetails(a)
+      @value = CurrentPredictor::Calculation.basedonmeter(@value[0],@value[1],@value[2],previousreading,currentreading)
+    elsif @a == "Boardgasenergy" && @a == a.providername
+      puts @a
+      @value = ElectriccurrentsController.new.getproviderdetails(a)
+      @value = CurrentPredictor::Calculation.basedonmeter(@value[0],@value[1],@value[2],previousreading,currentreading)
    end
   end
-  previousreading = params[:previousbill]
-  currentreading = params[:currentbill]
+  end
   
- @value = CurrentPredictor::Calculation.basedonmeter(@cost, @standardcharge,@pslv,previousreading,currentreading)
- puts "hbjhbjhjhvv #{@value[0]}andddd #{@value[1]}"
-
-  puts "THE COST IS #{@cost} and its standard charge is #{@standardcharge} and pslv charge is #{@pslv}"
+  def getproviderdetails(a)
+   raise 'Must Implement'
   end
 
 end

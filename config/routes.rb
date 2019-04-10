@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'cards/show'
   resources :products
   #resources :calculateelectricbills
+  #resources :users
   get 'calculateelectricbills/index'
   get '/calculateelectricbills' =>'calculateelectricbills#basedonroom'
   post '/calculateelectricbills' =>'calculateelectricbills#show'
