@@ -9,8 +9,8 @@ class AssetNotifierMailer < ApplicationMailer
         @use = Asset.find(@fun).user_id
         @uid = User.find(@use).id
         @doorno = Profile.find(@uid).door_no
-        @appointment = Complain.find(@value).appointment
-        @provider = Complain.find(@value).description
+        @appointment = Complain.last.appointment
+        @provider = Complain.last.description
         puts @user
         mail(to: @to,subject:  'Thanks for signing up for our amazing app' )
     end
