@@ -1,3 +1,4 @@
+module Rentalprofitorloss
 class Rentalmaster
     def self.expense(gross_rent, mortage_int,repairs,insurance,mang_charges,agent_fees, other,wear_tear)
         gross_rent = gross_rent
@@ -26,6 +27,6 @@ class Rentalmaster
     
 end     
 
-
+end
 
 

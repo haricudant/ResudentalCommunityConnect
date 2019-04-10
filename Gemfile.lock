@@ -87,6 +87,7 @@ GEM
     concurrent-ruby (1.1.4)
     connection_pool (2.2.2)
     crass (1.0.4)
+    currentpredictor (0.0.0)
     devise (4.6.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -206,6 +207,7 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     regexp_parser (1.3.0)
+    rentalprofitorloss (0.0.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
@@ -280,6 +282,7 @@ DEPENDENCIES
   chromedriver-helper
   cocoon
   coffee-rails (~> 4.2)
+  currentpredictor (~> 0.0.0)
   devise
   figaro
   jbuilder (~> 2.5)
@@ -295,6 +298,7 @@ DEPENDENCIES
   rails-observers
   rails-ujs
   rb-readline
+  rentalprofitorloss (~> 0.0.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

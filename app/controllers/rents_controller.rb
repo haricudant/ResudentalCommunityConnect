@@ -1,5 +1,5 @@
 class RentsController < ApplicationController
-  require 'rent'
+  #require 'rent'
   before_action :set_rent, only: [:show, :edit, :update, :destroy]
 
   # GET /rents
@@ -19,7 +19,7 @@ class RentsController < ApplicationController
     agefee = Rent.find(params[:id]).agent_fee
     o = Rent.find(params[:id]).other
     wr = Rent.find(params[:id]).wear_and_tear
-    good = Rentalmaster.expense(gr,mi,reoair,ins,manacharge,agefee,o,wr)
+    good = Rentalprofitorloss::Rentalmaster.expense(gr,mi,reoair,ins,manacharge,agefee,o,wr)
     @duck = good
     
   end

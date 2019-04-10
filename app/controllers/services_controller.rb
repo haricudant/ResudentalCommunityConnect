@@ -1,6 +1,7 @@
 
 class ServicesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_cache_buster
   before_action :ensure_admin, :only => [:new,:create,:update, :destroy]
     before_action :set_service, only: [:show, :edit, :update, :destroy]
 
@@ -9,6 +10,14 @@ class ServicesController < ApplicationController
       render :text => "Access Error Message", :status => :unauthorized  
     end
   end
+  
+  
+      def set_cache_buster
+        response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+      end
+
 
 
   # GET /services

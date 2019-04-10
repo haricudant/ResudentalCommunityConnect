@@ -20,7 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'rails-observers'
 gem 'stripe'
-
+gem 'currentpredictor', '~> 0.0.0'
+gem 'rentalprofitorloss', '~> 0.0.0'
 #bootstrap-sass
 gem 'bootstrap-sass'
 

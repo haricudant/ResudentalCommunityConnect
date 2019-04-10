@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
             def after_sign_in_path_for(resource)
                 "/signedinuserprofile"
             end
-            before_action :set_cache_buster
+           # before_action :set_cache_buster
 
       def set_cache_buster
         response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
