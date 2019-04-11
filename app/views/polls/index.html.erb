@@ -17,7 +17,7 @@
     
     <% @polls.each do |poll| %>
     <div class="well">
-    <h2>      <%= poll.topic %> <small>(vote count: <%= poll.votes_summary %>)</small></h2>      <p>
+    <h2>      <%= poll.topic %> <small>(vote count: <%= poll.vote_count %>)</small></h2>      <p>
       <% if current_user %>
         <%= link_to 'Participate!', poll_path(poll), class: 'btn btn-primary btn-lg block' %>
       <% else %>

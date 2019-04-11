@@ -5,10 +5,11 @@ class AssetObserver < ActiveRecord::Observer
     
    #@value = Asset.find(params[:id])
    @value = asset.id
-   @user = Complain.last.mailid
-    if(asset.previous_changes.any?)
+   @complain=Complain.find_by_asset_id(@value)
+  @user =@complain.mailid
+if(asset.previous_changes.any?)
 		   AssetNotifierMailer.mailer(@user,@value).deliver
-    end
+end
  
   end
 end
