@@ -4,4 +4,5 @@ class Product < ApplicationRecord
 
     accepts_nested_attributes_for :assignments
     has_many :colors, through: :assignments
+      validates :title, :price, presence: true
 end
