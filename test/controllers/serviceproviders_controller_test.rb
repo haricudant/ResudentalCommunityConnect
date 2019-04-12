@@ -22,11 +22,10 @@ class ServiceprovidersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create serviceprovider" do
     sign_in users(:one)
-    assert_difference('Serviceprovider.count') do
+   assert_difference('Serviceprovider.count') do
       post serviceproviders_url, params: { serviceprovider: { mailid: @serviceprovider.mailid, providername: @serviceprovider.providername, providerservice: @serviceprovider.providerservice } }
     end
-
-    assert_redirected_to serviceprovider_url(Serviceprovider.last)
+      assert_redirected_to serviceprovider_url(Serviceprovider.last)
   end
 
   test "should show serviceprovider" do

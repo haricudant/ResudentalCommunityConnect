@@ -1,4 +1,5 @@
 <div class = "jumbotron container textcenter">
+  <div class = "col-md-3 col-md-offset-4">
 <%= form_with(model: rent, local: true) do |form| %>
   <% if rent.errors.any? %>
     <div id="error_explanation">
@@ -14,53 +15,54 @@
 
   <div class="field">
     <%= form.label :grossrent %>
-    <%= form.text_field :grossrent %>
+    <%= form.text_field :grossrent,  class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :mortage_interest %>
-    <%= form.text_field :mortage_interest %>
+    <%= form.text_field :mortage_interest, class:"form-control"  %>
   </div>
 
  
 
   <div class="field">
     <%= form.label :repairs %>
-    <%= form.text_field :repairs %>
+    <%= form.text_field :repairs, class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :insurance %>
-    <%= form.text_field :insurance %>
+    <%= form.text_field :insurance, class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :management_charges %>
-    <%= form.text_field :management_charges %>
+    <%= form.text_field :management_charges, class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :agent_fee %>
-    <%= form.text_field :agent_fee %>
+    <%= form.text_field :agent_fee, class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :other %>
-    <%= form.text_field :other %>
+    <%= form.text_field :other, class:"form-control"  %>
   </div>
 
 
 
   <div class="field">
     <%= form.label :wear_and_tear %>
-    <%= form.text_field :wear_and_tear %>
+    <%= form.text_field :wear_and_tear, class:"form-control"  %>
   </div>
 
  
 
  
   <div class="actions">
-    <%= form.submit "Predict"%>
+    <%= form.submit "Predict" , class: "btn btn-primary"%>
+  </div>
   </div>
   </div>
 <% end %>

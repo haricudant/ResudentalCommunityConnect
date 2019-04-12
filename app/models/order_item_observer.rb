@@ -3,14 +3,12 @@ class OrderItemObserver < ActiveRecord::Observer
  
   def after_update(order_item)
    puts "thalaivaaaaa"
-   # @user=User.find(trip.user_id)
-    
-   #@value = Asset.find(params[:id])
-  # @value = asset.id
-   #@user = Complain.find(@value).mailid
-    #if(asset.previous_changes.any?)
-		  # AssetNotifierMailer.mailer(@user,@value).deliver
-    #end
+   
+    @value=order_item
+
+    if(order_item.previous_changes.any?)
+		  OrderItemNotifierMailer.mailer(@value).deliver
+    end
  
   end
 end

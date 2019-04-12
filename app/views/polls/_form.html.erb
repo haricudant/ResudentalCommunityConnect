@@ -21,5 +21,6 @@
          <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
     <% end %>
     <% else %>
-     <H1> Only Admin Can Create Poll</H1>
+     <%= render js: 'alert(\'Your vote cannot be saved. Have you already voted?\');' %>
+
     <% end %>

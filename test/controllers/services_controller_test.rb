@@ -24,7 +24,6 @@ class ServicesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Service.count') do
       post services_url, params: { service: { servicename: @service.servicename } }
     end
-
     assert_redirected_to service_url(Service.last)
   end
 

@@ -1,18 +1,13 @@
+<div class = 'well'>
 <% if current_user.admin != true %>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Topic:</strong>
   <strong><%=@poll.topic%></strong>
-  <ol>
-    <% for question in @poll.vote_values %>
-      <li>
-        <%= question.title %>
-        </li>
-     <% end %>
-</ol>
-</p>
+  </p>
 <%= render 'voting_form' %>
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
 <% end %>
+</div>

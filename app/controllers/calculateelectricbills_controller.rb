@@ -29,8 +29,7 @@ class CalculateelectricbillsController < ApplicationController
      puts @appliance
     end
     
-    
-     def showbasedonammenities
+    def showbasedonammenities
       cost = 0.1989
       @final = Hash.new()
       @watt = Hash.new()

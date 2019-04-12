@@ -33,6 +33,5 @@ validates :password,
          def voted_for?(poll)
           vote_values.any? {|v| v.poll == poll }
          end
-  #class << self
-    
+
 end

@@ -1,3 +1,5 @@
+<div class = "jumbotron">
+
 <h1>Editing Asset</h1>
 <%= form_with(model: @asset, local: true) do |form| %>
 
@@ -28,7 +30,7 @@
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.text_field :user_id , :readonly => true%>
   </div>
 
 
@@ -36,7 +38,6 @@
       <div class="panel-heading"><strong>If not working, Click to add extra details about the damage</strong></div>
               <div class="panel-body">
                   <%= form.fields_for :Complains do |complain| %>
-                  <%= puts "fucker #{complain}" %>
                   <%=  render 'Complain_fields', f: complain %>
                   <% end %>
                     <div class = 'links'> 
@@ -50,3 +51,4 @@
   <% end %>
 <%= link_to 'Show', @asset %> |
 <%= link_to 'Back', assets_path %>
+</div>

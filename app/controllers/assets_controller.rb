@@ -1,4 +1,5 @@
 class AssetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_asset, only: [:show, :edit, :update, :destroy]
 
   # GET /assets
@@ -10,7 +11,7 @@ class AssetsController < ApplicationController
   # GET /assets/1
   # GET /assets/1.json
   def show
-     @asset.user_id = current_user.id
+    # @asset.user_id = current_user.id
   end
 
   # GET /assets/new
@@ -26,17 +27,13 @@ class AssetsController < ApplicationController
   # GET /assets/1/edit
   def edit
      @assettype = Asset.find(params[:id]).assettype
-   
-    @serviceprovider = Serviceprovider.all
+      @serviceprovider = Serviceprovider.all
     letters = []
     provider = []
     @serviceprovider.each do |p|
-        puts ("Assettype is #{@assettype}")
-        puts ("service type is #{p.providerservice}")
       if (@assettype == p.providerservice)
         letters << p.mailid
         provider << p.id
-        puts "The assettype is #{@assettpe} and the serviceprovider is #{p.mailid} and its type is #{p.id}"
       end 
   @results = letters
   @provider = provider
@@ -62,7 +59,8 @@ end
   # PATCH/PUT /assets/1
   # PATCH/PUT /assets/1.json
   def update
-    
+    @value = params[:mailid]
+    puts "sjdsjsdnjkdsfndsfnjkfdsbfjkdsbfjsbdfksdbfkjdsbfkdsjbfsdbfdsjb #{@value}"
     respond_to do |format|
       if @asset.update(asset_params)
         format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }

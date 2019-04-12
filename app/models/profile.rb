@@ -1,5 +1,10 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  
+  ASSET_FORMAT = /\A
+    ^[a-zA-Z]+$
+   /x
+   
   validates_presence_of   :firstname, :message => 'Please Enter User  Name.'
   validates_presence_of   :lastname, :message => 'Please Enter Your Second name.'
   validates_presence_of   :door_no, :message => 'Please Enter te door number.'
@@ -8,5 +13,7 @@ class Profile < ApplicationRecord
   validates_presence_of   :user_id, :message => 'Please Enter Your user_id.'
   
   
- 
-end
+  validates :firstname,:lastname,:spouse_name,
+     format: { :with => ASSET_FORMAT },
+     on: :create
+ end

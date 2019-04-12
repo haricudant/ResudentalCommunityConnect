@@ -103,6 +103,10 @@ a.footer2 {
   display: block;
 }
 
+.jumbotron{
+    background-color: #ffffff  !important;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 

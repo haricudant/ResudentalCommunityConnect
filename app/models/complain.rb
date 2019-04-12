@@ -6,8 +6,10 @@ class Complain < ApplicationRecord
   
     ASSET_FORMAT = /\A
     ^[a-zA-Z]+$
-    
-
-  /x
+   /x
      validates :description,:appointment,:mailid,:user_id,:asset_id, presence: true
+     validates :description ,
+     format: { :with => ASSET_FORMAT },
+     on: :create
+       
 end

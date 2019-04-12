@@ -2,12 +2,15 @@
  #assetname: @asset.assetname, assettype: @asset.assettype, user_id: @asset.user_id, workingcondition: @asset.workingcondition } }
 one:
   assetname: MyString
-  assettype: MyString
+  assettype: Service.all
   workingcondition: MyString
-  user: 1
+  user: one
 
 two:
   assetname: MyString
-  assettype: MyString
+  assettype: mysti
   workingcondition: MyString
-  user: 2
+  user: two
+  
+
+  
