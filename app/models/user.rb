@@ -8,6 +8,7 @@ class User < ApplicationRecord
          has_one :profile
          has_many :assets, dependent: :destroy
          has_many :complains, dependent: :destroy
+         has_many :eventinterests
        PASSWORD_FORMAT = /\A
   (?=.{8,})          # Must contain 8 or more characters
   (?=.*\d)           # Must contain a digit

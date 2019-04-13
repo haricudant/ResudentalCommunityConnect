@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :eventinterests
+  resources :events
   resources :currentproviders
   resources :rents
   resources :cals

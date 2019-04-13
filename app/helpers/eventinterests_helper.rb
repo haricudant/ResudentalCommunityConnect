@@ -1,0 +1,2 @@
+module EventinterestsHelper
+end
