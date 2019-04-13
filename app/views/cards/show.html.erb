@@ -17,7 +17,7 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe['pk_test_ckKO5YW4t5HNlJT5vOF6Ju8900XaANUGFO'] %>"
           data-description="A month's subscription"
-          data-amount="500"
+          data-amount= <%= current_order.subtotal%>
           data-locale="auto"></script>
 <% end %>
 

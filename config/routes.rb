@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :eventinterests
-  resources :events
+  get 'userinterests/index'
+  get 'userinterests/show'
+  get 'userinterests/new'
+  get 'userinterests/edit'
+  resources :events do
+      resources :userinterests
+  end
   resources :currentproviders
   resources :rents
   resources :cals

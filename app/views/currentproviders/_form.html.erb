@@ -1,4 +1,6 @@
-<%= form_with(model: currentprovider, local: true) do |form| %>
+<div class = "jumbotron">
+  
+  <%= form_with(model: currentprovider, local: true) do |form| %>
   <% if currentprovider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(currentprovider.errors.count, "error") %> prohibited this currentprovider from being saved:</h2>
@@ -35,3 +37,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

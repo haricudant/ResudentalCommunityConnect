@@ -131,18 +131,6 @@ class PetAmenities< Rentdecorator
      
 end
 
-car = Basicexpense.new(15000)
-puts car.cost
-
-
-car2 = Rentdecorator.new(car)
-puts car2.cost
-
-
-car3 = LaundryAmenities.new(car)
-puts car3.cost
-puts car3.benefits
-      
         
     
      

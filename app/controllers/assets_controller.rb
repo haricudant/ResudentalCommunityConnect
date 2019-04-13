@@ -11,13 +11,13 @@ class AssetsController < ApplicationController
   # GET /assets/1
   # GET /assets/1.json
   def show
-    # @asset.user_id = current_user.id
+     @asset.user_id = current_user.id
   end
 
   # GET /assets/new
   def new
     @asset = Asset.new
-    @asset.user_id = current_user.id
+     @asset.user_id = current_user.id
     respond_to do |format|
     format.html # new.html.erb
     format.json { render json: @asset }
@@ -59,8 +59,7 @@ end
   # PATCH/PUT /assets/1
   # PATCH/PUT /assets/1.json
   def update
-    @value = params[:mailid]
-    puts "sjdsjsdnjkdsfndsfnjkfdsbfjkdsbfjsbdfksdbfkjdsbfkdsjbfsdbfdsjb #{@value}"
+    
     respond_to do |format|
       if @asset.update(asset_params)
         format.html { redirect_to @asset, notice: 'Asset was successfully updated.' }
@@ -90,6 +89,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def asset_params
-params.require(:asset).permit(:assetname, :assettype, :workingcondition, :user_id,Complains_attributes: [:id,:description,:appointment,:attachment,:mailid,:user_id,:asset_id,:serviceprovider_id,:_destroy])
+    params.require(:asset).permit(:assetname, :assettype, :workingcondition, :user_id,Complains_attributes: [:id,:description,:appointment,:attachment,:mailid,:user_id,:asset_id,:serviceprovider_id,:_destroy])
     end
 end

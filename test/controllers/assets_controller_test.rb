@@ -20,11 +20,9 @@ class AssetsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create asset" do
      sign_in users(:one)
-     puts 'Asset.count'
     assert_difference('Asset.count') do
       post assets_url, params: { asset: { assetname: @asset.assetname, assettype: @asset.assettype, user_id: @asset.user_id, workingcondition: @asset.workingcondition } }
     end
-
     assert_redirected_to asset_url(Asset.last)
   end
 
@@ -47,7 +45,8 @@ class AssetsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy asset" do
-     sign_in users(:one)
+    # sign_in users(:one)
+   #  puts"ljvlnflnf#{Asset.count}"
     assert_difference('Asset.count', -1) do
       delete asset_url(@asset)
     end

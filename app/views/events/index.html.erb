@@ -1,9 +1,10 @@
+<div class = "jumbotron">
 <p id="notice"><%= notice %></p>
 
 <h1>Events</h1>
 
-<table>
-  <thead>
+<table class = "table table-dark">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Cost</th>
@@ -16,7 +17,8 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.cost %></td>
-        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'User preference',new_event_userinterest_path(event) %></td>
+        <td><%= link_to 'Show', event_path(event) %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -25,5 +27,7 @@
 </table>
 
 <br>
-
+<% if current_user.admin? %>
 <%= link_to 'New Event', new_event_path %>
+<% end %>
+</div>

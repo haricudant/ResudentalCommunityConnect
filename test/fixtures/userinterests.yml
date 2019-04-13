@@ -2,10 +2,8 @@
 
 one:
   isinterest: MyString
-  user: one
-  events: one
+  event: one
 
 two:
   isinterest: MyString
-  user: two
-  events: two
+  event: two

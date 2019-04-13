@@ -1,5 +1,6 @@
+<div class = "jumbotron">
 <div class = 'well'>
-<% if current_user.admin != true %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,5 +10,6 @@
 <%= render 'voting_form' %>
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', polls_path %>
-<% end %>
+
+</div>
 </div>

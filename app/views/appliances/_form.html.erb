@@ -1,3 +1,4 @@
+<div class = "jumbotron">
 <%= form_with(model: appliance, local: true) do |form| %>
   <% if appliance.errors.any? %>
     <div id="error_explanation">
@@ -25,3 +26,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

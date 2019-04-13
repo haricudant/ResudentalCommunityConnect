@@ -1,0 +1,24 @@
+<div class = "jumbotron">
+    <h1>Events are <%= @events.name %></h1>
+<table>
+<tr>
+<th>USERS COUNT</th>
+<th>USER INTEREST</th>
+</tr>
+<% for interest in @userinterests %>
+<tr>
+    <td><%= interest.id %></td>
+<td><%= interest.isinterest %></td>
+<td><%= link_to 'Show', event_userinterest_path(@events, interest)
+%></td>
+<td><%= link_to 'Edit', edit_event_userinterest_path(@events, interest)
+%></td>
+<td><%= link_to 'Destroy', event_userinterest_path(@events, interest),
+:confirm => 'Are you sure?', :method => :delete %></td>
+</tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New review', new_event_userinterest_path(@events) %>
+<%= link_to 'Back to Events', @events %>
+</div>

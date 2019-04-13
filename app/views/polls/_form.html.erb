@@ -1,4 +1,3 @@
-<%=puts "THALA MY DEAR THALA #{current_user.admin}" %>
 <% if current_user.admin? %> 
 <%= form_for @poll do |f| %>
   <%= render 'shared/errors', object: @poll %>

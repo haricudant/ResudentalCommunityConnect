@@ -4,12 +4,11 @@ class ServiceprovidersControllerTest < ActionDispatch::IntegrationTest
    include Devise::Test::IntegrationHelpers
 
   setup do
-    
-    @serviceprovider = serviceproviders(:one)
+     @serviceprovider = serviceproviders(:one)
   end
 
   test "should get index" do
-        sign_in users(:one)
+    sign_in users(:one)
     get serviceproviders_url
     assert_response :success
   end

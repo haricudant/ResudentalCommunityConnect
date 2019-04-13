@@ -1,7 +1,6 @@
-# module Calculateelectricbill
-# require 'current_predictor'
- #require 'energias_controller'
+
 class CalculateelectricbillsController < ApplicationController 
+ 
    # class Base
     def basedonroom
       
