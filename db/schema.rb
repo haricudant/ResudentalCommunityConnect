@@ -78,16 +78,6 @@ ActiveRecord::Schema.define(version: 2019_04_13_003750) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "eventinterests", force: :cascade do |t|
-    t.string "isinterest"
-    t.integer "user_id"
-    t.integer "events_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["events_id"], name: "index_eventinterests_on_events_id"
-    t.index ["user_id"], name: "index_eventinterests_on_user_id"
-  end
-
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.decimal "cost"
