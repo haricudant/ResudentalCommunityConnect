@@ -27,11 +27,12 @@
         Please sign in via <%= link_to 'Facebook', '/auth/facebook' %> to participate in this poll.
       <% end %>
     </p>
-
+<% if current_user.admin? %>
     <div class="btn-group">
       <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
       <%= link_to 'Delete', poll_path(poll), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
     </div>
+    <% end %>
     </p>
      
       <tr>
@@ -43,8 +44,9 @@
 </table>
 
 <br>
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin != true %>
 <%= link_to 'New Poll', new_poll_path %>
+<% end %>
 <%= link_to 'Back', root_path %>
 <% end %>
 </div>
