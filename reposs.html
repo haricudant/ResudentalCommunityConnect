@@ -189,8 +189,8 @@ p {
       <td>5.2.2</td>
       <td>4.5.0
       <td>
-        2019-04-14 11:44:30 +0000<br><br>
-        1.981183856 seconds
+        2019-04-14 12:04:46 +0000<br><br>
+        1.971197357 seconds
       </td>
       <td>BasicAuth, BasicAuthTimingAttack, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, PermitAttributes, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, SprocketsPathTraversal, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing</td>
     </tr>
@@ -224,7 +224,7 @@ p {
     </tr>
     <tr>
       <td>Security Warnings</td>
-      <td>13 <span class='high-confidence'>(13)</span></td>
+      <td>12 <span class='high-confidence'>(12)</span></td>
     </tr>
   
     <tr>
@@ -246,7 +246,7 @@ p {
   
     <tr>
       <td>Format Validation</td>
-      <td>13</td>
+      <td>12</td>
     </tr>
   
   </tbody>
@@ -350,10 +350,7 @@ p {
       <td>Asset</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
       <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" >Insufficient validation for <span class="code">assetname</span> using <span class="code">/\A
-    ^[a-zA-Z]+$
-    
-
-  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 15<table id='context2' class='context' style='display:none'><caption>app/models/asset.rb</caption>      <thead style='display:none'>
+    [a-zA-Z]+\z/i</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 21<table id='context2' class='context' style='display:none'><caption>app/models/asset.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -362,105 +359,23 @@ p {
       <tbody>
         <tr class='context first'>
           <td class='context_line'>
-            <pre class='context'>12</pre>
+            <pre class='context'>16</pre>
           </td>
           <td class='context'>
-            <pre class='context'>  /x</pre>
+            <pre class='context'>     multiline: true,</pre>
           </td>
         </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>13</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>     validates :assetname ,</pre>
-            </td>
-          </tr>
-          <tr class='context near_error'>
-            <td class='context_line'>
-              <pre class='context'>14</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>     presence: true, </pre>
-            </td>
-          </tr>
-          <tr class='context alt error'>
-            <td class='context_line'>
-              <pre class='context'>15</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>     format: { :with =&gt; ASSET_FORMAT },</pre>
-            </td>
-          </tr>
-          <tr class='context near_error'>
-            <td class='context_line'>
-              <pre class='context'>16</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>     length: { minimum: 2 },</pre>
-            </td>
-          </tr>
           <tr class='context alt'>
             <td class='context_line'>
               <pre class='context'>17</pre>
             </td>
             <td class='context'>
-              <pre class='context'>     length: { maximum: 15 },</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>18</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>     on: :create</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>20</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>       validates :assetname ,</pre>
-            </td>
-          </tr>
-</tbody></table></div></td>
-    </tr>
-  
-    <tr>
-      <td><span class='high-confidence'>High</span></td>
-      <td>Asset</td>
-      <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" >Insufficient validation for <span class="code">assetname</span> using <span class="code">/\A
-    ^[a-zA-Z]+$
-    
-
-  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 22<table id='context3' class='context' style='display:none'><caption>app/models/asset.rb</caption>      <thead style='display:none'>
-        <tr>
-          <th>line number</th>
-          <th>line content</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class='context first'>
-          <td class='context_line'>
-            <pre class='context'>17</pre>
-          </td>
-          <td class='context'>
-            <pre class='context'>     length: { maximum: 15 },</pre>
-          </td>
-        </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>18</pre>
-            </td>
-            <td class='context'>
               <pre class='context'>     on: :create</pre>
             </td>
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>20</pre>
+              <pre class='context'>19</pre>
             </td>
             <td class='context'>
               <pre class='context'>       validates :assetname ,</pre>
@@ -468,7 +383,7 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
-              <pre class='context'>21</pre>
+              <pre class='context'>20</pre>
             </td>
             <td class='context'>
               <pre class='context'>       presence: true, </pre>
@@ -476,7 +391,7 @@ p {
           </tr>
           <tr class='context error'>
             <td class='context_line'>
-              <pre class='context'>22</pre>
+              <pre class='context'>21</pre>
             </td>
             <td class='context'>
               <pre class='context'>       format: { :with =&gt; ASSET_FORMAT },</pre>
@@ -484,13 +399,21 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
+              <pre class='context'>22</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        multiline: true,</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
               <pre class='context'>23</pre>
             </td>
             <td class='context'>
               <pre class='context'>       on: :edit</pre>
             </td>
           </tr>
-          <tr class='context'>
+          <tr class='context alt'>
             <td class='context_line'>
               <pre class='context'>24</pre>
             </td>
@@ -505,9 +428,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Complain</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context4');toggle('message4');toggle('full_message4')" >Insufficient validation for <span class="code">description</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" >Insufficient validation for <span class="code">description</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-   /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 12<table id='context4' class='context' style='display:none'><caption>app/models/complain.rb</caption>      <thead style='display:none'>
+   /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 12<table id='context3' class='context' style='display:none'><caption>app/models/complain.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -585,9 +508,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Currentprovider</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context4');toggle('message4');toggle('full_message4')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 13<table id='context5' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
+     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 13<table id='context4' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -689,9 +612,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Currentprovider</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context6');toggle('message6');toggle('full_message6')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context5');toggle('message5');toggle('full_message5')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 17<table id='context6' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
+     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 17<table id='context5' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -785,9 +708,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Currentprovider</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context7');toggle('message7');toggle('full_message7')" >Insufficient validation for <span class="code">cost</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context6');toggle('message6');toggle('full_message6')" >Insufficient validation for <span class="code">cost</span> using <span class="code">/\A
    ^[0-9]+\.[0-9]{4}$
-     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 22<table id='context7' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
+     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 22<table id='context6' class='context' style='display:none'><caption>app/models/currentprovider.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -849,10 +772,10 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Event</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context8');toggle('message8');toggle('full_message8')" >Insufficient validation for <span class="code">name</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context7');toggle('message7');toggle('full_message7')" >Insufficient validation for <span class="code">name</span> using <span class="code">/\A
     ^[a-zA-Z]+$
 
-  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 12<table id='context8' class='context' style='display:none'><caption>app/models/event.rb</caption>      <thead style='display:none'>
+  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 12<table id='context7' class='context' style='display:none'><caption>app/models/event.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -930,9 +853,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Profile</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context9');toggle('message9');toggle('full_message9')" >Insufficient validation for <span class="code">firstname</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context8');toggle('message8');toggle('full_message8')" >Insufficient validation for <span class="code">firstname</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-   /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 17<table id='context9' class='context' style='display:none'><caption>app/models/profile.rb</caption>      <thead style='display:none'>
+   /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 17<table id='context8' class='context' style='display:none'><caption>app/models/profile.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -994,9 +917,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Service</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context10');toggle('message10');toggle('full_message10')" >Insufficient validation for <span class="code">servicename</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context9');toggle('message9');toggle('full_message9')" >Insufficient validation for <span class="code">servicename</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 5<table id='context10' class='context' style='display:none'><caption>app/models/service.rb</caption>      <thead style='display:none'>
+     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 5<table id='context9' class='context' style='display:none'><caption>app/models/service.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -1058,9 +981,9 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>Serviceprovider</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context11');toggle('message11');toggle('full_message11')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context10');toggle('message10');toggle('full_message10')" >Insufficient validation for <span class="code">providername</span> using <span class="code">/\A
     ^[a-zA-Z]+$
-     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 8<table id='context11' class='context' style='display:none'><caption>app/models/serviceprovider.rb</caption>      <thead style='display:none'>
+     /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 8<table id='context10' class='context' style='display:none'><caption>app/models/serviceprovider.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -1138,13 +1061,13 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>User</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context12');toggle('message12');toggle('full_message12')" >Insufficient validation for <span class="code">password</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context11');toggle('message11');toggle('full_message11')" >Insufficient validation for <span class="code">password</span> using <span class="code">/\A
   (?=.{8,})          # Must contain 8 or more characters
   (?=.*\d)           # Must contain a digit
   (?=.*[a-z])        # Must contain a lower case character
   (?=.*[A-Z])        # Must contain an upper case character
   (?=.*[[:^alnum:]]) # Must contain a symbol
-/x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 23<table id='context12' class='context' style='display:none'><caption>app/models/user.rb</caption>      <thead style='display:none'>
+/x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 23<table id='context11' class='context' style='display:none'><caption>app/models/user.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -1230,13 +1153,13 @@ p {
       <td><span class='high-confidence'>High</span></td>
       <td>User</td>
       <td><a rel="noreferrer" href="https://brakemanscanner.org/docs/warning_types/format_validation/">Format Validation</a></td>
-      <td><div class='warning_message' onClick="toggle('context13');toggle('message13');toggle('full_message13')" >Insufficient validation for <span class="code">password</span> using <span class="code">/\A
+      <td><div class='warning_message' onClick="toggle('context12');toggle('message12');toggle('full_message12')" >Insufficient validation for <span class="code">password</span> using <span class="code">/\A
   (?=.{8,})          # Must contain 8 or more characters
   (?=.*\d)           # Must contain a digit
   (?=.*[a-z])        # Must contain a lower case character
   (?=.*[A-Z])        # Must contain an upper case character
   (?=.*[[:^alnum:]]) # Must contain a symbol
-/x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 30<table id='context13' class='context' style='display:none'><caption>app/models/user.rb</caption>      <thead style='display:none'>
+/x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 30<table id='context12' class='context' style='display:none'><caption>app/models/user.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>

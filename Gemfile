@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem "tarantula"
 gem 'codesake-dawn', '~> 1.2', '>= 1.2.99'
+gem 'capistrano-bundler'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

@@ -1,14 +1,7 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_admin, :only => [:new,:create, :destroy]
+  require "manoj_dec.rb"
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-
-  def ensure_admin
-    unless current_user && current_user.admin?
-      render :text => "Access Error Message", :status => :unauthorized  
-    end
-  end
   # GET /events
   # GET /events.json
   def index
@@ -33,6 +26,27 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+  
+    
+     @event.name = params[:event][:name]
+     @event.cost = params[:event][:cost]
+     myevent = BasicEvent.new(@event.cost)
+  
+     
+     if params[:event][:dj].to_s.length > 0 then
+      myevent = DJ_Decorator.new(myevent)
+     end 
+     if params[:event][:beverages].to_s.length > 0 then
+       myevent = Beverages_Decorator.new(myevent)
+     end
+      if params[:event][:catering].to_s.length > 0 then
+        myevent = Catering_Decorator.new(myevent)
+      end
+     if params[:event][:host].to_s.length > 0 then
+      myevent = Host_Decorator.new(myevent)
+     end
+     
+    @event.cost = myevent.cost
 
     respond_to do |format|
       if @event.save

@@ -16,7 +16,6 @@ class User < ApplicationRecord
   (?=.*[A-Z])        # Must contain an upper case character
   (?=.*[[:^alnum:]]) # Must contain a symbol
 /x
-
 validates :password, 
   presence: true, 
   length: { in: Devise.password_length}, 
@@ -27,7 +26,7 @@ validates :password,
 validates :password, 
   allow_nil: true, 
   length: { in: Devise.password_length }, 
-  format: { with: PASSWORD_FORMAT }, 
+ format: { with: PASSWORD_FORMAT }, 
   confirmation: true, 
   on: :update 
          

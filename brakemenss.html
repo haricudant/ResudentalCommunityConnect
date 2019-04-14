@@ -189,8 +189,8 @@ p {
       <td>5.2.2</td>
       <td>4.5.0
       <td>
-        2019-04-14 11:44:30 +0000<br><br>
-        1.981183856 seconds
+        2019-04-14 11:49:11 +0000<br><br>
+        2.164300491 seconds
       </td>
       <td>BasicAuth, BasicAuthTimingAttack, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, PermitAttributes, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, SprocketsPathTraversal, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing</td>
     </tr>
@@ -413,15 +413,15 @@ p {
               <pre class='context'>18</pre>
             </td>
             <td class='context'>
-              <pre class='context'>     on: :create</pre>
+              <pre class='context'>     multiline: true,</pre>
             </td>
           </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>20</pre>
+              <pre class='context'>19</pre>
             </td>
             <td class='context'>
-              <pre class='context'>       validates :assetname ,</pre>
+              <pre class='context'>     on: :create</pre>
             </td>
           </tr>
 </tbody></table></div></td>
@@ -435,7 +435,7 @@ p {
     ^[a-zA-Z]+$
     
 
-  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 22<table id='context3' class='context' style='display:none'><caption>app/models/asset.rb</caption>      <thead style='display:none'>
+  /x</span>. Use <span class="code">\A</span> and <span class="code">\z</span> as anchors near line 23<table id='context3' class='context' style='display:none'><caption>app/models/asset.rb</caption>      <thead style='display:none'>
         <tr>
           <th>line number</th>
           <th>line content</th>
@@ -444,15 +444,15 @@ p {
       <tbody>
         <tr class='context first'>
           <td class='context_line'>
-            <pre class='context'>17</pre>
+            <pre class='context'>18</pre>
           </td>
           <td class='context'>
-            <pre class='context'>     length: { maximum: 15 },</pre>
+            <pre class='context'>     multiline: true,</pre>
           </td>
         </tr>
           <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>18</pre>
+              <pre class='context'>19</pre>
             </td>
             <td class='context'>
               <pre class='context'>     on: :create</pre>
@@ -460,7 +460,7 @@ p {
           </tr>
           <tr class='context'>
             <td class='context_line'>
-              <pre class='context'>20</pre>
+              <pre class='context'>21</pre>
             </td>
             <td class='context'>
               <pre class='context'>       validates :assetname ,</pre>
@@ -468,7 +468,7 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
-              <pre class='context'>21</pre>
+              <pre class='context'>22</pre>
             </td>
             <td class='context'>
               <pre class='context'>       presence: true, </pre>
@@ -476,7 +476,7 @@ p {
           </tr>
           <tr class='context error'>
             <td class='context_line'>
-              <pre class='context'>22</pre>
+              <pre class='context'>23</pre>
             </td>
             <td class='context'>
               <pre class='context'>       format: { :with =&gt; ASSET_FORMAT },</pre>
@@ -484,15 +484,23 @@ p {
           </tr>
           <tr class='context alt near_error'>
             <td class='context_line'>
-              <pre class='context'>23</pre>
+              <pre class='context'>24</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>        multiline: true,</pre>
+            </td>
+          </tr>
+          <tr class='context'>
+            <td class='context_line'>
+              <pre class='context'>25</pre>
             </td>
             <td class='context'>
               <pre class='context'>       on: :edit</pre>
             </td>
           </tr>
-          <tr class='context'>
+          <tr class='context alt'>
             <td class='context_line'>
-              <pre class='context'>24</pre>
+              <pre class='context'>26</pre>
             </td>
             <td class='context'>
               <pre class='context'>end</pre>

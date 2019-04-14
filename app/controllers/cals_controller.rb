@@ -32,6 +32,13 @@ class CalsController < ApplicationController
     @cal.rent = params[:cal][:rent]
     myCal = Basicexpense.new(@cal.rent)
     
+    @a_sport =  params[:cal][:sports]
+    @a_laund =  params[:cal][:laundry]
+    @a_misc  =  params[:cal][:misc]
+    @a_park  =  params[:cal][:parking]
+    @a_pet   =  params[:cal][:pet]
+    
+    puts "knfrknfreknkefe #{ @a_sport}"
     
     if params[:cal][:sports].to_s.length > 0 then
       myCal = SportsAmenities.new(myCal)

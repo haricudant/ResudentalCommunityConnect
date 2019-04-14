@@ -17,10 +17,14 @@
       <tr>
         <td><%= event.name %></td>
         <td><%= event.cost %></td>
-        <td><%= link_to 'User preference',new_event_userinterest_path(event) %></td>
-        <td><%= link_to 'Show', event_path(event) %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class ="aaa">
+        <td><%= link_to 'Register',new_event_userinterest_path(event), class: "btn btn-success  " %></td>
+        <td><%= link_to 'Check', event_path(event), class: "btn btn-success"%></td>
+       <%  if current_user.admin? %>
+        <td><%= link_to 'Update', edit_event_path(event) %></td>
+        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>      
+      </div>
       </tr>
     <% end %>
   </tbody>
@@ -31,3 +35,9 @@
 <%= link_to 'New Event', new_event_path %>
 <% end %>
 </div>
+<style>
+  .aaa{
+    color:white;
+    
+  }
+</style>

@@ -1,9 +1,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
   
-  ASSET_FORMAT = /\A
-    ^[a-zA-Z]+$
-   /x
+  
    
   validates_presence_of   :firstname, :message => 'Please Enter User  Name.'
   validates_presence_of   :lastname, :message => 'Please Enter Your Second name.'
@@ -12,8 +10,6 @@ class Profile < ApplicationRecord
   validates_presence_of   :Number_of_Cars, :message => 'Please Enter number of cars.'
   validates_presence_of   :user_id, :message => 'Please Enter Your user_id.'
   
-  
-  validates :firstname,:lastname,:spouse_name,
-     format: { :with => ASSET_FORMAT },
-     on: :create
+  validates :firstname,:lastname ,:spouse_name, presence: true, format: { with: /\A[a-z]*\z/i, message:  "Name must only contain letters." }
+
  end

@@ -3,13 +3,8 @@ class Complain < ApplicationRecord
   belongs_to :asset
   belongs_to :serviceprovider
   mount_uploader :attachment, AttachmentUploader
-  
-    ASSET_FORMAT = /\A
-    ^[a-zA-Z]+$
-   /x
-     validates :description,:appointment,:mailid,:user_id,:asset_id, presence: true
-     validates :description ,
-     format: { :with => ASSET_FORMAT },
-     on: :create
-       
+  validates :description , presence: true, format: { with: /\A[a-z]*\z/i, message:  "Name must only contain letters." }
+   
+     validates :appointment,:mailid,:user_id,:asset_id, presence: true
+     
 end

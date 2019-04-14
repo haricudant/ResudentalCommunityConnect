@@ -1,4 +1,6 @@
 <div class = "jumbotron">
+    <% if current_user.admin? %>
+
  <p id="notice"><%= notice %></p>
 
  <style type="text/css">
@@ -39,4 +41,8 @@
 <br>
 
 <%= link_to 'New Serviceprovider', new_serviceprovider_path %>
+
+<% else %>
+<h1>Only Admin can access this page </h1>
+<% end %>
 </div>
