@@ -8,8 +8,8 @@ def create
   @amount = current_order.subtotal
 
   customer = Stripe::Customer.create({
-    email: params['pk_test_ckKO5YW4t5HNlJT5vOF6Ju8900XaANUGFO'],
-    source: params['sk_test_C4q4W75tRiZfnRqVDc2j2c2H00LbQH42KL'],
+    email: params[:stripeEmail],
+    source: params[:stripeToken]
   })
 
   charge = Stripe::Charge.create({

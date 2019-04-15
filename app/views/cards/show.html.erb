@@ -3,7 +3,7 @@
 <div id="card-item">
 <%= render 'cards_item'%>
 </div>
-<%= form_tag charges_path do %>
+<%= form_tag root_path do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
@@ -14,11 +14,51 @@
     </label>
   </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe['pk_test_ckKO5YW4t5HNlJT5vOF6Ju8900XaANUGFO'] %>"
-          data-description="A month's subscription"
-          data-amount= <%= current_order.subtotal%>
-          data-locale="auto"></script>
+  
+  <!--        <script-->
+  <!--  src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
+  <!--  data-key="pk_test_ckKO5YW4t5HNlJT5vOF6Ju8900XaANUGFO"-->
+  <!--  data-amount="<%= current_order.subtotal %>"-->
+  <!--  data-name="Demo Site"-->
+  <!--  data-description="Widget"-->
+  <!--  data-image="https://stripe.com/img/documentation/checkout/marketplace.png"-->
+  <!--  data-locale="auto"-->
+  <!--  data-currency="eur">-->
+    
+  <!--</script>-->
+  
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="customButton">Purchase</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_ckKO5YW4t5HNlJT5vOF6Ju8900XaANUGFO',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    alert("Payment is Successful");
+   //  window.location.href = "http://stackoverflow.com";
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Demo Site',
+    description: '2 widgets',
+    currency: 'eur',
+    amount: 2000
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
 <% end %>
 
 <h4><%= link_to "Back", shops_path, class: "f" %></h4>
