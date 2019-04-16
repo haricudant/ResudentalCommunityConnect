@@ -38,7 +38,7 @@ var handler = StripeCheckout.configure({
   locale: 'auto',
   token: function(token) {
     alert("Payment is Successful");
-   //  window.location.href = "http://stackoverflow.com";
+    window.location.href = "https://cryptic-escarpment-89060.herokuapp.com/";
     // Get the token ID to your server-side code for use.
   }
 });
@@ -49,7 +49,7 @@ document.getElementById('customButton').addEventListener('click', function(e) {
     name: 'Demo Site',
     description: '2 widgets',
     currency: 'eur',
-    amount: 2000
+    amount: <%= current_order.subtotal %>*100
   });
   e.preventDefault();
 });
