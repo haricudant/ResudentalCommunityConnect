@@ -3,7 +3,7 @@
 <div id="card-item">
 <%= render 'cards_item'%>
 </div>
-<%= form_tag root_path do %>
+<%= form_tag cards_show_path do %>
   <article>
     <% if flash[:error].present? %>
       <div id="error_explanation">
