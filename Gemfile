@@ -1,14 +1,12 @@
-source 'https://rubygems.org'
+'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.4.2'
+#gem 'sqlite3', '~> 1.3.6'
+#iBundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use sqlite3 as the database for Active Record
-group :development, :test do
-
-end
+#:iUse sqlite3 as the database for Active Record
+#id
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -41,7 +39,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
-gem 'jquery-rails'
+#gem 'jquery-rails'
 gem 'rb-readline'
 
 # Use Redis adapter to run Action Cable in production
@@ -94,6 +92,7 @@ group :test do
   gem 'minitest-reporters'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'minitest-rails', '~> 3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
